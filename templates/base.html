@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+  <!-- Font Style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
+
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+  <div class="p-2 px-md-4 mb-3 bg-black">
+  </div>
+
+  {% block main %}{% endblock %}
+
+</body>
+
+</html>

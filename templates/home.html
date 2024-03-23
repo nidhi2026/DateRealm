@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Date Realm{% endblock %}
+
+{% block main %}
+
+<div class="container">
+  <div class="card-deck mb-3">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-body text-center card-body">
+        <img class="d-block mx-auto img-fluid" style="max-width: 75vw; max-height: 40vh;" src="{{ url_for('static', filename='logo.png') }}">
+        <h2 class="my-0 font-weight-normal text-center">
+          . . . where every date has a story . . .
+        </h2>
+      </div>
+      <div class="card-body text-center">
+        <form action="/" method="post">
+          <label for="date">Choose a date</label>
+          <br>
+          <input type="date" name="date" value="{{current_date}}" min="0000-00-00" max="{{todays_date}}" />
+          <br>
+          <br>
+          <button class="btn btn-primary btn-sm btn-gold" type="submit">Date Fact</button>
+        </form>
+      </div>
+      <div class="card-body text-center">
+        {% if response %}
+          {% if response['response_date'] %}
+            <h2> On this day ... </h2>
+            {% if response['response_date']['found'] %}
+              <p>
+                On {{day}} {{month}}, {{response['response_date']['year']}},
+                {{response['response_date']['text']}}
+              </p>
+            {% else %}
+              <p> Sorry, we couldn't find any fact/event for date {{day}} {{month}} </p>
+            {% endif %}
+          {% endif %}
+          {% if response['response_year'] %}
+            <h2> At this year ... </h2>
+            {% if response['response_year']['found'] %}
+              <p>
+                On {{year}},
+                {{response['response_year']['text']}}
+              </p>
+            {% else %}
+              <p> Sorry, we couldn't find any fact/event for year {{year}} </p>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

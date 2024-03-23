@@ -1,0 +1,19 @@
+body {
+    font-family: Lora, Arial, sans-serif;
+    background-color: rgb(0, 0, 0);
+    color: gold;
+}
+
+/* home */
+.btn-gold {
+    background-color: #DAA520; 
+    border-color: #ce9a16;
+} 
+.btn-gold:hover{
+    background-color: #eab93c; 
+    border-color: #ce9a16;
+}
+.card-body {
+    background-color: rgb(0, 0, 0);
+    border-color: black;
+}
